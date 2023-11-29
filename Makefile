@@ -20,7 +20,7 @@ build: format
 	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/sky-tech-bv/devops-course/cmd.appVersion=${VERSION}
 	
 image:
-	docker build . -t ${REGESTRY}/${APP}:${VERSION}-${TARGETARCH}
+	docker build . -t ${REGESTRY}/${APP}:1-${TARGETARCH}
 
 push:
 	docker push ${REGESTRY}/${APP}:${VERSION}-${TARGETARCH}
