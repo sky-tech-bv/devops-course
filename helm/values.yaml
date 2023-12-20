@@ -6,7 +6,7 @@ image:
   arch: amd64
 
 secret:
-  name: "kbot"
+  name: "devops-course"
   env: "TELE_TOKEN"
   key: "token"
 securityContext:
