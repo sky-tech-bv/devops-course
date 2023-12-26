@@ -1,5 +1,5 @@
 APP=$(shell basename $(shell git remote get-url origin))
-REGESTRY=ghcr.io/cicd
+REGESTRY=ghcr.io/sky-tech-bv
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
 TARGETARCH=amd64
@@ -20,7 +20,7 @@ build: format
 	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/sky-tech-bv/devops-course/cmd.appVersion=${VERSION}
 	
 image:
-	docker build . -t ${REGESTRY}/${APP}:1-${TARGETARCH}
+	docker build . -t ${REGESTRY}/${APP}:${VERSION}-${TARGETARCH} --build-arg TARGETARCH=${TARGETARCH}
 
 push:
 	docker push ${REGESTRY}/${APP}:${VERSION}-${TARGETARCH}
