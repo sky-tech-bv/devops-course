@@ -1,14 +1,12 @@
 replicaCount: 1
-
 image:
   registry: "ghcr.io"
   repository: "skytechbv"
-  pullPolicy: IfNotPresent  
-  tag: v1.0.6-4ebbc12
+  pullPolicy: IfNotPresent
+  tag: v1.4.0-a2537c3
   os: linux
   arch: amd64
   parameter: go
-
 secret:
   name: "devops-course"
   env: "TELE_TOKEN"
