@@ -1,9 +1,13 @@
 replicaCount: 1
 
 image:
-  repository: skytechbv
-  tag: "v1.0.6-4ebbc12"
+  registry: "ghcr.io"
+  repository: "skytechbv"
+  pullPolicy: IfNotPresent  
+  tag: v1.0.6-4ebbc12
+  os: linux
   arch: amd64
+  parameter: go
 
 secret:
   name: "devops-course"
